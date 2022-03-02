@@ -1,9 +1,11 @@
 mkdir -p ~/.vim
+mkdir -p ~/.config/
 
-cp -R ~/.config/vim/autoload ~/.vim/autoload
 
-cat ~/.config/vim/plugins_config.vim > ~/.config/vim/mayconfig.vim
-cat ~/.config/vim/basic.vim >> ~/.config/vim/mayconfig.vim
-cat ~/.config/vim/mayconfig.vim > ~/.vimrc
+cp -R ~/mayconfig/vim/autoload ~/.vim/autoload
+
+cat ~/mayconfig/vim/plugins_config.vim > ~/.mayconfig.vim
+cat ~/mayconfig/vim/basic.vim >> ~/.mayconfig.vim
+cat ~/mayconfig/vim/mayconfig.vim > ~/.vimrc
 
 vim +PlugInstall +qall 
