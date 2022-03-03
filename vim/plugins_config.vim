@@ -20,3 +20,25 @@ call plug#end()
 let g:airline_theme='molokai'
 
 
+""""""""""""""""""""""""""""""""""
+" => NERDTree 
+""""""""""""""""""""""""""""""""""
+
+map <Leader>e :NERDTreeToggle<CR>
+
+
+""""""""""""""""""""""""""""""""""
+" => FZF 
+""""""""""""""""""""""""""""""""""
+
+nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> K :call SearchWordWithAg()<CR>
+
+
+""""""""""""""""""""""""""""""""""
+" => Helpers 
+""""""""""""""""""""""""""""""""""
+
+function! SearchWordWithAg()
+  execute 'Ag' expand('<cword>')
+endfunction
