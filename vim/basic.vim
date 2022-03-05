@@ -29,6 +29,7 @@ set ai
 set si
 set wrap
 set hlsearch
+set paste
 
 
 """"""""""""""""""""""""""""""""""
