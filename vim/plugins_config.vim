@@ -29,6 +29,8 @@ let g:airline_theme='molokai'
 """"""""""""""""""""""""""""""""""
 
 map <Leader>e :NERDTreeToggle<CR>
+set modifiable
+
 
 
 """"""""""""""""""""""""""""""""""
