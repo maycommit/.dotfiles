@@ -8,6 +8,8 @@ end
 return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
 
+	use "williamboman/nvim-lsp-installer"
+
 	use {
     "neovim/nvim-lspconfig",
     config = [[ require('plugins/lspconfig') ]]
