@@ -8,7 +8,7 @@ end
 return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
 
-	use 'tomasr/molokaiS'
+	use 'morhetz/gruvbox'
 	use {
   	'nvim-telescope/telescope.nvim',
   	requires = { {'nvim-lua/plenary.nvim'} }

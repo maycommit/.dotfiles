@@ -13,10 +13,10 @@ opt.shiftwidth = 2
 opt.tabstop = 2
 opt.smarttab = true
 opt.autoindent = true
+opt.termguicolors = true
+opt.background = "dark" 
 
-
-cmd([[let g:molokai_original = 1]])
-
+cmd([[colorscheme gruvbox]])
 
 -- auto source vim
 cmd([[
