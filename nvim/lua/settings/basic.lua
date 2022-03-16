@@ -15,6 +15,9 @@ opt.smarttab = true
 opt.autoindent = true
 
 
+cmd([[let g:molokai_original = 1]])
+
+
 -- auto source vim
 cmd([[
   augroup neovim
