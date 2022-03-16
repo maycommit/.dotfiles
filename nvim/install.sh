@@ -6,5 +6,5 @@ tar -xf nvim-linux64.tar.gz
 sudo mv nvim-linux64/bin/nvim /usr/bin/nvim
 sudo rm -r nvim-linux64.tar.gz
 sudo rm -r nvim-linux64
-
-$ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim

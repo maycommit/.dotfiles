@@ -1,3 +1,4 @@
 require('plugins')
-require('settings')
 require('keymaps')
+require('settings.basic')
+require('settings.autopairs')
