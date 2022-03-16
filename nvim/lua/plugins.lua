@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
 	use 'ray-x/lsp_signature.nvim'
 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 	use 'onsails/lspkind-nvim'
+	use 'williamboman/nvim-lsp-installer'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
