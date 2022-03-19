@@ -29,6 +29,27 @@ return require('packer').startup(function(use)
 	use 'onsails/lspkind-nvim'
 	use 'williamboman/nvim-lsp-installer'
 
+	use {
+		"kyazdani42/nvim-tree.lua",
+    requires = "kyazdani42/nvim-web-devicons",
+  	config = [[ require('settings/nvim-tree') ]]
+  }
+
+	use {
+		"nvim-treesitter/nvim-treesitter",
+  	run = ":TSUpdate",
+   	requires = {
+      "windwp/nvim-ts-autotag",
+    	"p00f/nvim-ts-rainbow",
+    },
+		config = [[ require('settings/treesitter') ]]
+  }
+
+	use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = [[ require('settings/blankline') ]]
+	}
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
