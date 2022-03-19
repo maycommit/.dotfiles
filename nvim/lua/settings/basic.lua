@@ -2,7 +2,7 @@ local g = vim.g
 local opt = vim.opt
 local cmd = vim.cmd
 
-cmd('autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=grey')
+opt.encoding = 'utf-8'
 opt.guifont = 'DroidSansMono Nerd Font 11'
 opt.number = true
 opt.relativenumber = true
@@ -25,7 +25,6 @@ opt.listchars = {
 }
 
 
-
 cmd([[colorscheme gruvbox]])
 
 -- auto source vim
@@ -36,3 +35,9 @@ cmd([[
 	augroup end
 ]])
 
+cmd([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500, on_visual=true}
+  augroup end
+]], false)

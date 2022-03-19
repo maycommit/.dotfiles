@@ -16,10 +16,11 @@ map('n', '<leader>q', ':q<CR>')
 map("n", "<Leader>h", ":<C-u>split<CR>")
 map("n", "<Leader>v", ":<C-u>vsplit<CR>")
 
-map('n', '<C-t>', ':Term<CR>', { noremap = true })
+map('n', '<C-t>', ':split term<CR>', { noremap = true })
 map('t', '<Esc>', '<C-\\><C-n>')
 
-map("n", "<Leader>p", "<cmd>Telescope find_files<cr>")
+map("n", "<Leader>ff", "<cmd>Telescope find_files<cr>")
+map("n", "<Leader>fg", "<cmd>Telescope live_grep<cr>")
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>')
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')
