@@ -58,7 +58,8 @@ return require('packer').startup(function(use)
 
 	use {
   	'romgrk/barbar.nvim',
-  	requires = {'kyazdani42/nvim-web-devicons'}
+  	requires = {'kyazdani42/nvim-web-devicons'},
+		config = [[ require('settings/barbar') ]]
 	}
 
   -- Automatically set up your configuration after cloning packer.nvim

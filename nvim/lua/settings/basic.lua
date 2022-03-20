@@ -2,6 +2,7 @@ local g = vim.g
 local opt = vim.opt
 local cmd = vim.cmd
 
+opt.swapfile = false
 opt.encoding = 'utf-8'
 opt.guifont = 'DroidSansMono Nerd Font 11'
 opt.number = true
