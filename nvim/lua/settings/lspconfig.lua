@@ -73,15 +73,22 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'gopls', 'ccls', 'html', 'tsserver' }
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+	local opts = {}
+  opts.on_attach = on_attach
 
--- Call setup
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+  server:setup(opts)
+  vim.cmd [[ do User LspAttachBuffers ]]
+end)
+
+local servers = { 'gopls', 'ccls', 'html', 'tsserver' }
+for _, name in pairs(servers) do
+  local server_is_found, server = lsp_installer.get_server(name)
+  if server_is_found then
+    if not server:is_installed() then
+      print("Installing " .. name)
+      server:install()
+    end
+  end
 end

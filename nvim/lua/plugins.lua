@@ -56,6 +56,10 @@ return require('packer').startup(function(use)
     config = [[ require('settings/lualine') ]]
 	}
 
+	use {
+  	'romgrk/barbar.nvim',
+  	requires = {'kyazdani42/nvim-web-devicons'}
+	}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
