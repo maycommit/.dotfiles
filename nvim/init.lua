@@ -1,3 +1,5 @@
 require('core/settings')
 require('core/keymaps')
 require('packer_init')
+require('plugins/nvim-tree')
+require('plugins/nvim-treesitter')
