@@ -49,13 +49,4 @@ cmd [[
     autocmd BufLeave term://* stopinsert
 ]]
 
-cmd [[
-  autocmd VimEnter * silent !tmux set status off
-]]
-
-
-cmd [[
-  autocmd VimLeave * silent !tmux set status on
-]]
-
 
