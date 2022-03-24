@@ -24,7 +24,8 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
-map('n', '<leader>q', ':qa!<CR>')
+map('n', '<leader>q', ':q<CR>')
+map('n', '<leader>qf', ':q!<CR>')
 
 map('n', '<C-t>', ':Term<CR>', { noremap = true })
 map('t', '<Esc>', '<C-\\><C-n>')
@@ -33,3 +34,6 @@ map('n', '<C-n>', ':NvimTreeToggle<CR>')
 map('n', '<leader>nn', ':NvimTreeFocus<CR>')
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')
+
+map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
