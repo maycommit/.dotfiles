@@ -17,6 +17,17 @@ return require('packer').startup(function(use)
 
   use 'neovim/nvim-lspconfig'
 
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'L3MON4D3/LuaSnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'saadparwaiz1/cmp_luasnip',
+    },
+  }
+
   use 'williamboman/nvim-lsp-installer'
 
   use 'famiu/feline.nvim'
