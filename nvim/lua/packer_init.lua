@@ -9,11 +9,17 @@ return require('packer').startup(function(use)
 
   use 'kyazdani42/nvim-tree.lua'
 
-  use 'kyazdani42/nvim-web-devicons'
+  use 'lukas-reineke/indent-blankline.nvim'
 
   use 'nvim-treesitter/nvim-treesitter'
 
+  use 'navarasu/onedark.nvim'
+
   use 'neovim/nvim-lspconfig'
+
+  use 'williamboman/nvim-lsp-installer'
+
+  use 'famiu/feline.nvim'
 
   if packer_bootstrap then
     require('packer').sync()

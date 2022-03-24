@@ -30,5 +30,6 @@ map('n', '<C-t>', ':Term<CR>', { noremap = true })
 map('t', '<Esc>', '<C-\\><C-n>')
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>')
+map('n', '<leader>nn', ':NvimTreeFocus<CR>')
 map('n', '<leader>r', ':NvimTreeRefresh<CR>')
 map('n', '<leader>n', ':NvimTreeFindFile<CR>')
