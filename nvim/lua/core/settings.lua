@@ -41,7 +41,7 @@ exec([[
 
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
-cmd [[command Term :botright vsplit term://$SHELL]]
+cmd [[command Term :botright split term://$SHELL]]
 
 cmd [[
     autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
