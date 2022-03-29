@@ -9,6 +9,7 @@ opt.swapfile = false
 opt.completeopt = 'menuone,noselect'
 
 opt.number = true
+opt.relativenumber = true
 opt.showmatch = true
 opt.foldmethod = 'marker'
 opt.colorcolumn = '120'

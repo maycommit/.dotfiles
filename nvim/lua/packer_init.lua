@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use 'mg979/vim-visual-multi'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   if packer_bootstrap then
     require('packer').sync()
