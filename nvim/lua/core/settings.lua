@@ -24,12 +24,15 @@ opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.smartindent = true
+opt.autoindent = true
 
 opt.hidden = true
 opt.history = 100
 opt.lazyredraw = true
 opt.synmaxcol = 240
 opt.updatetime = 400
+
+cmd [[ filetype plugin indent on ]]
 
 cmd [[au BufWritePre * :%s/\s\+$//e]]
 
