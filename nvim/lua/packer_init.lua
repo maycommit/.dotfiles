@@ -32,12 +32,12 @@ return require('packer').startup(function(use)
 
   use 'famiu/feline.nvim'
 
+  use {'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   if packer_bootstrap then
     require('packer').sync()
