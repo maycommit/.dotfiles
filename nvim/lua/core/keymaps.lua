@@ -24,7 +24,8 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
-map('n', '<leader>q', ':q!<CR>')
+map('n', '<leader>q', ':q<CR>')
+map('n', '<leader>Q', ':q!<CR>')
 
 map('n', '<C-t>', ':Term<CR>', { noremap = true })
 map('t', '<Esc>', '<C-\\><C-n>')
