@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
 
   use 'neovim/nvim-lspconfig'
 
+  use 'jose-elias-alvarez/typescript.nvim'
+
   use {
     'hrsh7th/nvim-cmp',
     requires = {
