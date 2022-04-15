@@ -37,3 +37,10 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>')
 
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
+
+map('n', '<leader>G', ':tab Git<CR>')
+map('n', '<leader>go', ':GBrowse<CR>')
+map('n', '<leader>gb', ':Git blame<CR>')
+map('n', '<leader>gw', ':Gwrite<CR>')
+map('n', '<leader>gd', ':Gdiffsplit<CR>')
+map('n', '<leader>gv', ':tab GV!<CR>')

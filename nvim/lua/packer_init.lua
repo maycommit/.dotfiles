@@ -54,6 +54,11 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use({
+    "tpope/vim-fugitive",
+    requires = { "tpope/vim-rhubarb", "junegunn/gv.vim" },
+  })
+
   if packer_bootstrap then
     require('packer').sync()
   end
