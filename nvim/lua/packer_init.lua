@@ -7,11 +7,22 @@ end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'nvim-lua/plenary.nvim'
+
+  use {
+    'ggandor/lightspeed.nvim',
+    requires = {
+      'tpope/vim-repeat'
+    }
+  }
+
   use 'kyazdani42/nvim-tree.lua'
 
   use 'lukas-reineke/indent-blankline.nvim'
 
   use 'nvim-treesitter/nvim-treesitter'
+
+  use 'RRethy/nvim-treesitter-textsubjects'
 
   use 'navarasu/onedark.nvim'
 
@@ -29,6 +40,8 @@ return require('packer').startup(function(use)
   }
 
   use 'williamboman/nvim-lsp-installer'
+
+  use "jose-elias-alvarez/nvim-lsp-ts-utils"
 
   use 'famiu/feline.nvim'
 
