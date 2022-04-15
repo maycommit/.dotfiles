@@ -9,6 +9,7 @@ local nvim_lsp = require 'lspconfig'
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -82,7 +83,7 @@ lsp_installer.on_server_ready(function(server)
   vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
-local servers = { 'clangd', 'tsserver', 'gopls', 'rust_analyzer', 'pyright' }
+local servers = { 'tsserver', 'clangd', 'gopls', 'rust_analyzer', 'pyright' }
 for _, name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(name)
   if server_is_found then
@@ -93,4 +94,11 @@ for _, name in pairs(servers) do
   end
 end
 
-require('typescript').setup({})
+require('typescript').setup({
+  server = {
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
+    end,
+    capabilities = capabilities
+  }
+})

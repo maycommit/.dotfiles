@@ -11,7 +11,7 @@ cmp.setup {
 
 -- Completion settings
   completion = {
-    completeopt = 'menuone,noselect'
+    completeopt = 'menu, menuone,noselect'
   },
 
   -- Key mapping
