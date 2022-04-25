@@ -83,7 +83,7 @@ lsp_installer.on_server_ready(function(server)
   vim.cmd [[ do User LspAttachBuffers ]]
 end)
 
-local servers = { 'tsserver', 'clangd', 'gopls', 'rust_analyzer', 'pyright' }
+local servers = { 'tsserver', 'clangd', 'gopls', 'rust_analyzer', 'pyright', 'eslint'}
 for _, name in pairs(servers) do
   local server_is_found, server = lsp_installer.get_server(name)
   if server_is_found then
