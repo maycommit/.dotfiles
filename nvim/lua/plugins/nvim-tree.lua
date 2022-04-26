@@ -6,6 +6,7 @@ g.nvim_tree_highlight_opened_files = 1
 g.nvim_tree_respect_buf_cwd = 1
 g.nvim_tree_root_folder_modifier = ':~'
 g.nvim_tree_symlink_arrow = ' >> '
+g.nvim_tree_indent_markers = 1
 g.nvim_tree_width_allow_resize = 1
 g.nvim_tree_show_icons = {
   git = 1,
@@ -31,7 +32,6 @@ g.nvim_tree_icons = {
 }
 
 require('nvim-tree').setup {
-  nvim_tree_indent_markers = 1,
   open_on_setup = true,
   auto_close = false,
   update_cwd = true,
