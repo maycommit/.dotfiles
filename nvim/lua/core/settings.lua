@@ -8,6 +8,7 @@ opt.clipboard = 'unnamedplus'
 opt.swapfile = false
 opt.completeopt = 'menuone,noselect'
 
+opt.autoread = true
 opt.number = true
 opt.relativenumber = true
 opt.showmatch = true
