@@ -1,4 +1,7 @@
 require('nvim-treesitter.configs').setup {
+  indent = {
+    enable = true
+  },
   highlight = {
     enable = true,
   },
@@ -6,4 +9,7 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     keymaps = { ["."] = "textsubjects-smart" },
   },
+  autotag = {
+    enable = true
+  }
 }

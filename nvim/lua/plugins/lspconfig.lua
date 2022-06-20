@@ -97,8 +97,31 @@ end
 require('typescript').setup({
   server = {
     on_attach = function(client, bufnr)
+      local ts_utils = require("nvim-lsp-ts-utils")
+      ts_utils.setup({})
+      ts_utils.setup_client(client)
       on_attach(client, bufnr)
     end,
     capabilities = capabilities
   }
 })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    signs = true,
+    update_in_insert = true,
+    virtual_text = {
+        true,
+        spacing = 6,
+        --severity_limit='Error'  -- Only show virtual text on error
+    },
+  }
+)
+
+
+
+vim.api.nvim_command [[ sign define LspDiagnosticsSignError         text=✗ texthl=LspDiagnosticsSignError       linehl= numhl= ]]
+vim.api.nvim_command [[ sign define LspDiagnosticsSignWarning       text=⚠ texthl=LspDiagnosticsSignWarning     linehl= numhl= ]]
+vim.api.nvim_command [[ sign define LspDiagnosticsSignInformation   text= texthl=LspDiagnosticsSignInformation linehl= numhl= ]]
+vim.api.nvim_command [[ sign define LspDiagnosticsSignHint          text= texthl=LspDiagnosticsSignHint        linehl= numhl= ]]
