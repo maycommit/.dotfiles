@@ -111,14 +111,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = true,
     signs = true,
     update_in_insert = true,
-    virtual_text = {
-        true,
-        spacing = 6,
-        --severity_limit='Error'  -- Only show virtual text on error
-    },
+    virtual_text = false,
   }
 )
-
 
 
 vim.api.nvim_command [[ sign define LspDiagnosticsSignError         text=✗ texthl=LspDiagnosticsSignError       linehl= numhl= ]]
