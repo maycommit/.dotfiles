@@ -44,3 +44,6 @@ map('n', '<leader>gb', ':Git blame<CR>')
 map('n', '<leader>gw', ':Gwrite<CR>')
 map('n', '<leader>gd', ':Gdiffsplit<CR>')
 map('n', '<leader>gv', ':tab GV!<CR>')
+
+map('n', '<leader>xx', '<cmd>Trouble<cr>')
+map('n', '<leader>xw', '<cmd>Trouble workspace_diagnostics<cr>')
