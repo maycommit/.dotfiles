@@ -1,0 +1,97 @@
+call plug#begin()
+
+Plug 'preservim/nerdtree'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+call plug#end()
+
+let mapleader = ","
+
+set nocompatible
+filetype off
+syntax on
+filetype plugin indent on
+set modelines=0
+set number
+set ruler
+set encoding=utf-8
+set clipboard=unnamedplus
+set wildmenu
+set showcmd
+set autoindent
+set splitbelow
+set autoread
+set completeopt=menuone,noinsert,noselect,preview
+
+" Whitespace
+set wrap
+set textwidth=79
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+" Cursor
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:>
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <C-t> :term<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>nn :NERDTreeFocus<CR>
+nnoremap <leader>vr :so %<CR>
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+
+if executable('pyls')
+	au User lsp_setup call lsp#register_server({
+		\ 'name': 'pyls',
+		\ 'cmd': {server_info->['pyls']},
+		\ 'allowlist': ['python'],
+		\ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+      au!
+      " call s:on_lsp_buffer_enabled only for languages that has the server
+      " registered.
+      autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
