@@ -4,5 +4,6 @@ end
 
 echo "source ~/.asdf/asdf.fish" >> ~/.config/fish/config.fish
 set -x SHELL (which fish)
+source ~/.asdf/asdf.fish
 
-alias vim=nvim
+fish_vi_key_bindings
